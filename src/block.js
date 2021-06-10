@@ -6,7 +6,7 @@ class Block{
         this.difficulties =difficulties;
         this.serializedObject=serializedObject;
         this.timestamp=new Date();
-       
+        this.nounce= Math.floor(Math.random() * 4294967295);
         this.mine();
     }
 
@@ -16,7 +16,7 @@ class Block{
 
     mine(){
         //TDD
-        //chamar a função difficultiesFunc
+        //após minerar  chamar a função difficultiesFunc
     }
 
     difficultiesFunc(){
