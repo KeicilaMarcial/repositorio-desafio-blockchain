@@ -1,13 +1,12 @@
 const  sha256 = require('crypto-js/sha256');
 class Block{
-    constructor(index=0,previousHash=null,serializedObject ="recebe um obj serializado",  difficulty ="[varias]" ){
+    constructor(index=0,previousHash=null,serializedObject=null,difficulties =[] ){  
         this.index=index;
         this.previousHash=previousHash;
-        this.difficulty =difficulty;
-        this.nounce=nounce;
+        this.difficulties =difficulties;
         this.serializedObject=serializedObject;
         this.timestamp=new Date();
-        
+       
         this.mine();
     }
 
@@ -17,9 +16,10 @@ class Block{
 
     mine(){
         //TDD
+        //chamar a função difficultiesFunc
     }
 
-    difficulties(){
+    difficultiesFunc(){
         //TDD
     }
 }module.exports=Block;

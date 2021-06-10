@@ -1,20 +1,20 @@
-const Block = require ('./block')
+const Block = require ('../src/block')
 
  class BlockChain{
-    constructor(difficulties = "[algumas]"){
+    constructor(difficulties=[]){
         this.blocks= [new Block()];
         this.index=1;
-        this.difficulties =dificulties;
+        this.difficulties =difficulties;
     }
 
     getLastBlock(){
-        //TDD
+      
     }
-    addBlock(data){
-        //TDD
+    addBlock(serializedObject){
+      
     }
-
     isValid(){
         //TDD
     }
- }module.exports=BlockChain;
+ }
+module.exports=BlockChain;
