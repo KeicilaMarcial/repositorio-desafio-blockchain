@@ -2,7 +2,7 @@ const Block = require ('../src/block')
 
 
  class BlockChain{
-    constructor(difficulty=0){
+    constructor(difficulty=2){
         this.blocks= [new Block()];
         this.index=1;
         this.difficulty =difficulty;
@@ -41,3 +41,5 @@ const Block = require ('../src/block')
     }
  }
 module.exports=BlockChain;
+
+

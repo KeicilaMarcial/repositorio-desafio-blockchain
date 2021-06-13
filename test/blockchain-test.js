@@ -10,6 +10,7 @@ describe("blockchain", function() {
       context("addBlock function works", function() {
             it('expect a new block to be added into the blockchain', function() {
                 expect(blockC.addBlock("Block #1")).to.be
+                expect(blockC.addBlock("Block #2")).to.be
             })
         })
         context("isValid function works", function() {
