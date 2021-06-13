@@ -18,8 +18,8 @@ describe('Block', function(){
                 block.mine();
                 let hash = block.hash;
                 let difficulty = block.difficulty
-                //let reg = new RegExp(^0{block.difficulty})
-                //expect(hash).to.match(/`^0}`/);
+                console.log(hash)
+                expect(hash.substring(0, difficulty)).to.equal(Array(difficulty + 1).join("0"));
             });
         });
     });

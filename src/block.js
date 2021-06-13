@@ -25,7 +25,4 @@ class Block{
     }
 }
 
-const bloco = new Block();
-bloco.mine();
-
 module.exports=Block;
