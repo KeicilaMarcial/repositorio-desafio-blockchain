@@ -1,7 +1,7 @@
 const  sha256 = require('crypto-js/sha256');
 
 class Block{
-    constructor(index=0, previousHash=null, serializedObject ="recebe um obj serializado", difficulty=0){
+    constructor(index=0, previousHash=null, serializedObject ="recebe um obj serializado", difficulty=1){
         this.index=index;
         this.previousHash=previousHash;
         this.difficulty =difficulty;
@@ -18,16 +18,11 @@ class Block{
 
     mine(){
         this.hash = this.hashing();
-        console.log(Array(this.difficulty + 1).join("0"));
         while (this.hash.substring(0, this.difficulty) !== Array(this.difficulty + 1).join("0")){
             this.nounce++
             this.hash = this.hashing();
-            console.log(this.hash);
         }
     }
 }
-
-const bloco = new Block();
-bloco.mine();
 
 module.exports=Block;
