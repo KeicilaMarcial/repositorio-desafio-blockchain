@@ -12,11 +12,9 @@ const Block = require ('../src/block')
       return  this.blocks[this.blocks.length-1]
     }
     addBlock(serializedObject){
-       const index = this.index
        const previousHash = this.getLastBlock().hash
        const difficulty = this.difficulty
-       const block = new Block(index,previousHash,serializedObject,difficulty)
-       this.index++
+       const block = new Block(previousHash,serializedObject,difficulty)
        this.blocks.push(block)
        console.log(this.blocks)
     }
@@ -28,13 +26,11 @@ const Block = require ('../src/block')
         if (currentBlock.hash !== currentBlock.hashing()) {
             return false
         }
-
-        if (currentBlock.index !== previousBlock.index + 1) {
-            return false
-        }
-
         if (currentBlock.previousHash !== previousBlock.hash) {
             return false
+        }
+        if(currentBlock.hash[0]!=='0'){
+          return false
         }
       }
       return true
