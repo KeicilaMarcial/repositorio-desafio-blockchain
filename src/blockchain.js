@@ -17,6 +17,7 @@ const Block = require ('../src/block')
        const block = new Block(previousHash,serializedObject,difficulty)
        this.blocks.push(block)
        console.log(this.blocks)
+       return true
     }
     isValid(){
       for (let i = 1; i < this.blocks.length; i++) {
