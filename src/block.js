@@ -1,11 +1,10 @@
-import 'serialize-javascript' as serialize;
 import sha256 from 'crypto-js/sha256';
 class Block{
-    constructor(previousHash=null,serializedObject=serialize("Genesis"), difficulty=1){
+    constructor(previousHash=null,serializedObject=("Genesis"), difficulty=1){
         this.previousHash=previousHash;
         this.difficulty =difficulty;
         this.nounce= 0;
-        this.serializedObject=serialize({data: serializedObject});
+        this.serializedObject=({data: serializedObject});
         this.timestamp=new Date();
         
         this.mine();

@@ -1,6 +1,33 @@
 .main-title{
-    background-color: #999;
-    border: 1px solid blue;
+    background-color: #EFEFEF;
+    border: 1px solid rgb(41, 89, 101);
     text-align: center;
-    padding: 20px;
+    position: relative;
+    left: 20px;
+    width: 90%;
+    color: rgb(41, 89, 101);
+    font-weight: bold;
+    padding: 10px;   
+    display:block;
+   margin-top: 10px;
+   margin-bottom: 20px;
 }
+
+body{
+    background-color:white;
+}
+h2{
+    padding: 20px;
+    color: rgb(41, 89, 101);
+}
+
+#form{
+    width: 50%;
+    height: 50%;
+    padding: 20px;
+    position: relative;
+    display: block;
+}
+
+
+
