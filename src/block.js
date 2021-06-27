@@ -1,6 +1,6 @@
 const  sha256 = require('crypto-js/sha256');
 const serialize  = require('serialize-javascript');
-
+//import sha256 from 'crypto-js/sha256'
 class Block{
     constructor(previousHash=null,serializedObject=serialize("Genesis"), difficulty=1){
         this.previousHash=previousHash;
