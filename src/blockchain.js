@@ -1,4 +1,4 @@
-const Block = require ('../src/block')
+import Block from '../src/block'
 
 
  class BlockChain{
@@ -39,6 +39,6 @@ const Block = require ('../src/block')
       return true
     }
  }
-module.exports=BlockChain;
+export default BlockChain;
 
 
