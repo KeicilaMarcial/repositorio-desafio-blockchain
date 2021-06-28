@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>BlockChain</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel ="stylesheet" href="../dist/index.css">
+  </head>
+  <body>
+    
+    <script>
+      if (global === undefined) {
+        var global = window;
+      }
+    </script>
+    <script src="../dist/bundle.js"></script>
+      <div id="form">
+        <h2>Add new block</h2>
+        <form class="form-group">
+          <input type="text" id="data" name="data" placeholder="Data" class="form-control"  required><br>
+          <input type="number" id="difficulty" name="difficulty" placeholder="Type down the difficulty" class="form-control"  required><br>
+          <input type="button"  id="form-bt" value="Mine" class="btn btn-submit">
+        </form>
+      </div>
+      <hr>
+      <h2>BlockChain</h2>
+      <div id="blc">
+        <!--Lista Blockchain-->
+      </div>
+  </body>
+</html>

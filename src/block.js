@@ -1,14 +1,12 @@
-const  sha256 = require('crypto-js/sha256');
-const serialize  = require('serialize-javascript');
+import sha256 from 'crypto-js/sha256';
 
 class Block{
-    constructor(previousHash=null,serializedObject=serialize("Genesis"), difficulty=1){
+    constructor(previousHash=null,serializedObject=("Genesis"), difficulty=1){
         this.previousHash=previousHash;
         this.difficulty =difficulty;
         this.nounce= 0;
-        this.serializedObject=serialize({data: serializedObject});
+        this.serializedObject=({data: serializedObject});
         this.timestamp=new Date();
-        
         this.mine();
     }
 
@@ -18,11 +16,32 @@ class Block{
 
     mine(){
         this.hash = this.hashing();
-        while (this.hash.substring(0, this.difficulty) !== Array(this.difficulty + 1).join("0")){
+       let dificuldade = []
+       
+        for(let i=0;i<this.difficulty;i++){
+            dificuldade.push(0)
+        }
+
+        console.log("Mining",this.difficulty)
+        console.log("dificuldade",dificuldade)
+         while (this.hash.substring(0, this.difficulty) !== dificuldade.join('')){
+            console.log("hash",this.hash.substring(0, this.difficulty))
+            console.log("dificuldade", dificuldade.join())
             this.nounce++
             this.hash = this.hashing();
         }
+       /* while (!(/^0*$/.test(this.hash.substring(0, this.difficulty)))) {
+            this.nonce++
+            this.hash = this.generateHash()
+        }*/
     }
 }
 
-module.exports=Block;
+export default Block;
+
+/*while (this.hash.substring(0, this.difficulty) !== /Array(this.difficulty + 1).join("0")){
+    console.log("hash",this.hash.substring(0, this.difficulty))
+    console.log("dificuldade",Array(this.difficulty + 1).join("0"))
+    this.nounce++
+    this.hash = this.hashing();
+}*/
