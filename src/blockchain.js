@@ -1,6 +1,5 @@
 import Block from '../src/block'
 
-
  class BlockChain{
     constructor(){
         this.blocks= [new Block()];
@@ -11,14 +10,15 @@ import Block from '../src/block'
     getLastBlock(){
       return  this.blocks[this.blocks.length-1]
     }
-    addBlock(serializedObject,difficulty){
+    addBlock(serializedObject,dif){
+      
        const previousHash = this.getLastBlock().hash
-      // const difficulty = this.difficulty
-       const block = new Block(previousHash,serializedObject,difficulty)
+       //const difficulty = dif
+       const block = new Block(previousHash,serializedObject,dif)
        if(this.blocks.push(block)){
         console.log(this.blocks)
        return true
-       }
+      }
        
     }
     isValid(){
@@ -32,9 +32,9 @@ import Block from '../src/block'
         if (currentBlock.previousHash !== previousBlock.hash) {
             return false
         }
-        if(currentBlock.hash[0]!=='0'){
+       /* if(currentBlock.hash[0]!=='0'){
           return false
-        }
+        }*/
       }
       return true
     }
