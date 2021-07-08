@@ -39,7 +39,7 @@ export default class Formjs extends Component{
         return(
            <div className="form">
                     <section id="form">
-                        <h2>Add new block</h2>
+                        <h3>Add new block</h3>
                         <form className="form-group"/>
                         <input type="number" id="difficulty" name="difficulty" placeholder="Type down the difficulty" class="form-control" onChange={(event)=>{this.setState({difficulty:event.target.value})}} required/><br/>
                         <input type="text"  id="data" name="data" placeholder="Data" className="form-control"  onChange={(event)=>{this.setState({data:event.target.value})}} required/><br/>
