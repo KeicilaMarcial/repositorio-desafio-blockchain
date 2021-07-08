@@ -25,12 +25,20 @@ export default class Formjs extends Component{
         console.log('Your input value is: ' + this.state.difficulty)
         blockchain.addBlock( this.state.data,this.state.difficulty)
         n++;
-        let newBlock= JSON.stringify(Object.values(blockchain.blocks.slice(length-1)))
-        console.log("tam" + blockchain.blocks.length)
+        //let newBlock= JSON.stringify(Object.values(blockchain.blocks.slice(length-1)))
+        let index = blockchain.blocks.length;
+        let difficulty = blockchain.blocks[index-1].difficulty.toString();
+        let nounce = blockchain.blocks[index-1].nounce.toString();
+        let timestamp = blockchain.blocks[index-1].timestamp.toString();
+        let data = JSON.stringify(Object.values(blockchain.blocks[index-1].serializedObject)[0]);
+        let previousHash = blockchain.blocks[index-1].previousHash.toString();
+        let hash = blockchain.blocks[index-1].hash.toString();
+        let newBlock = `Difficulty: ${difficulty}/  Nounce: ${nounce}/  Data: ${data}/  Timestamp: ${timestamp}\n\nPrevius Hash: ${previousHash}\n\nHash: ${hash}`;
+        console.log("New Block:", blockchain.blocks.length)
+        console.log("tam" + JSON.stringify(blockchain.blocks[index-1]))
         if(blockchain.blocks.length>1){
             label.create("BLOCK #" + n)
             heading.create(newBlock)
-           
         }
     }
     

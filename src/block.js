@@ -16,7 +16,7 @@ class Block{
 
     mine(){
         this.hash = this.hashing();
-       let dificuldade = []
+        let dificuldade = []
        
         for(let i=0;i<this.difficulty;i++){
             dificuldade.push(0)
