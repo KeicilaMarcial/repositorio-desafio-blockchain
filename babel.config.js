@@ -3,12 +3,14 @@ module.exports = {
       [
         '@babel/preset-env',
         {
-          corejs: 2,
-          useBuiltIns: 'usage'
+          "corejs": 2,
+          "useBuiltIns": 'usage',
+          "debug":true,
+          "corejs":3
         }
       ],
-      '@vue/babel-preset-jsx'
+      '@babel/preset-react'
     ],
-    plugins: []
+    "plugins": ["@babel/plugin-syntax-dynamic-import"]
   
   }
