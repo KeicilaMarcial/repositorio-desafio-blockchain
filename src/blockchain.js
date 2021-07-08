@@ -10,6 +10,7 @@ import Block from '../src/block'
     getLastBlock(){
       return  this.blocks[this.blocks.length-1]
     }
+    
     addBlock(serializedObject,dif){
       
        const previousHash = this.getLastBlock().hash
@@ -17,6 +18,7 @@ import Block from '../src/block'
        const block = new Block(previousHash,serializedObject,dif)
        if(this.blocks.push(block)){
         console.log(this.blocks)
+        console.log("difficulty",this.blocks[1].difficulty)
        return true
       }
        

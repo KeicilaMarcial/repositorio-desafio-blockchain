@@ -16,17 +16,17 @@ class Block{
 
     mine(){
         this.hash = this.hashing();
-       let dificuldade = []
+        let dificuldade = []
        
         for(let i=0;i<this.difficulty;i++){
             dificuldade.push(0)
         }
 
-        console.log("Mining",this.difficulty)
-        console.log("dificuldade",dificuldade)
+       // console.log("Mining",this.difficulty)
+       // console.log("dificuldade",dificuldade)
          while (this.hash.substring(0, this.difficulty) !== dificuldade.join('')){
-            console.log("hash",this.hash.substring(0, this.difficulty))
-            console.log("dificuldade", dificuldade.join())
+            //console.log("hash",this.hash.substring(0, this.difficulty))
+            //console.log("dificuldade", dificuldade.join())
             this.nounce++
             this.hash = this.hashing();
         }
