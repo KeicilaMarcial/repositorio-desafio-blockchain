@@ -39,9 +39,3 @@ class Block{
 
 export default Block;
 
-/*while (this.hash.substring(0, this.difficulty) !== /Array(this.difficulty + 1).join("0")){
-    console.log("hash",this.hash.substring(0, this.difficulty))
-    console.log("dificuldade",Array(this.difficulty + 1).join("0"))
-    this.nounce++
-    this.hash = this.hashing();
-}*/

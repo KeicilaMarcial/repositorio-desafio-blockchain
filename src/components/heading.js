@@ -1,23 +1,27 @@
-import { HmacSHA1 } from 'crypto-js';
-import React, {Component} from 'react';
+import React from 'react';
 
 
-export default class Heading extends Component{
-    
-    create(text){
-        const heading = document.createElement('div');
-        heading.innerText = text;
-        heading.classList.add('main-title')
-        document.querySelector('body').appendChild(heading);
-    }
+const blockchainList =(props)=>{
+    const blockchain = props.blockchainList;
+    console.log("props", props);
+    console.log("blockchain", blockchain);
+    /*return(
+        <div className="main-title">
+            <p>{JSON.stringify(Object.values(blockchain))}</p>
+        </div>
 
-    render(){
-        return(
-           <div className="heading">
-               <div className = "main-title">
-                BLOCk # 
-               </div>              
-           </div>
-        )
-    }
+    )*/
+    return(
+        <div>
+            {blockchain.blocks.map(block=>{
+                return (
+                <div  className="main-title">
+                        <p>
+                             {JSON.stringify(block)}
+                        </p>
+                </div>)
+            })}
+        </div>
+    )
 }
+export default blockchainList;
